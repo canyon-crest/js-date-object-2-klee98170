@@ -16,7 +16,7 @@
 // element with ID "warmUpDate".
 
 // STEP 1: Create a new Date object using: let now = new Date();
-let now = new Date().getDay();
+let now = new Date();
 // STEP 2: Use .getDay() to get the day of the week as a number.
 //         Sunday = 0, Monday = 1, Tuesday = 2, ... Saturday = 6
 let dayIndex = now.getDay();
@@ -82,7 +82,20 @@ document.getElementById("warmUpDate").innerHTML = dayName;
 //     change button text to "Start"
 //   - If timer is stopped: restart it from 0 and change
 //     button text to "Stop"
+let start = new Date().getTime();
+myBtn.addEventListener('click', stopTimer)
+let running= true;
 
+function stopTimer(){
+    if(running){
+        clearInterval(interval)
+        running = false;
+    }
+    else{ 
+        interval = setInterval(timer, 10);
+        running = true
+    }
+}
 // STEP 13: Create a variable to track whether the timer is
 //          currently running (let running = true;)
 
