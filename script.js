@@ -90,7 +90,7 @@ let timerId = setInterval(function() {
 
 let running= true;
 
-let myBtn = document.getElementsById("myBtn");
+let myBtn = document.getElementById("myBtn");
 
 myBtn.addEventListener("click", function() {
     if (running) {
